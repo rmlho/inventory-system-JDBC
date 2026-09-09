@@ -2,7 +2,7 @@ package org.example.model;
 
 import java.util.Objects;
 
-public class Product {
+public abstract class Product {
     protected int id;
     protected String productName;
     protected int productCategory;
