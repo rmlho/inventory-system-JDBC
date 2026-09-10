@@ -1,6 +1,6 @@
 package org.example.model;
 
-public abstract class Product {
+public class Product {
     protected int id;
     protected String productName;
     protected CategoryProductEnum productCategory;
