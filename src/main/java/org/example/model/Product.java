@@ -1,13 +1,13 @@
 package org.example.model;
 
-public class Product {
+public class Product<ProductStatusEnum> {
     protected int id;
     protected String productName;
     protected CategoryProductEnum productCategory;
     protected int availableQuantity;
     protected int minimumQuantity;
     protected float productValue;
-    protected String productStatus;
+    protected ProductStatusEnum productStatus;
 
     @Override
     public String toString() {
@@ -70,11 +70,11 @@ public class Product {
         this.productValue = productValue;
     }
 
-    public String getProductStatus() {
+    public ProductStatusEnum getProductStatus() {
         return productStatus;
     }
 
-    public void setProductStatus(String productStatus) {
+    public void setProductStatus(ProductStatusEnum productStatus) {
         this.productStatus = productStatus;
     }
 }
