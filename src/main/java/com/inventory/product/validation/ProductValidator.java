@@ -1,6 +1,6 @@
-package org.example.validation;
+package com.inventory.product.validation;
 
-import org.example.exception.ProductInvalidException;
+import com.inventory.product.exception.ProductInvalidException;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;

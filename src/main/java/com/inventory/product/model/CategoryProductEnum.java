@@ -1,6 +1,6 @@
-package org.example.model;
+package com.inventory.product.model;
 
-import org.example.exception.ProductInvalidException;
+import com.inventory.product.exception.ProductInvalidException;
 
 public enum CategoryProductEnum {
     HARDWARE(1, "Hardware"),

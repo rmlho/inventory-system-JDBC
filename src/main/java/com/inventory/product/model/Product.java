@@ -1,4 +1,4 @@
-package org.example.model;
+package com.inventory.product.model;
 
 public class Product<ProductStatusEnum> {
     protected int id;
