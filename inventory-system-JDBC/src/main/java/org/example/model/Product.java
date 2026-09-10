@@ -1,23 +1,13 @@
 package org.example.model;
 
-import java.util.Objects;
-
 public abstract class Product {
     protected int id;
     protected String productName;
-    protected int productCategory;
+    protected CategoryProductEnum productCategory;
     protected int availableQuantity;
     protected int minimumQuantity;
     protected float productValue;
     protected String productStatus;
-
-    public Product(String productName, int productCategory, int availableQuantity, int minimumQuantity, float productValue) {
-        this.productName = productName;
-        this.productCategory = productCategory;
-        this.availableQuantity = availableQuantity;
-        this.minimumQuantity = minimumQuantity;
-        this.productValue = productValue;
-    }
 
     @Override
     public String toString() {
@@ -49,10 +39,10 @@ public abstract class Product {
     }
 
     public int getProductCategory() {
-        return productCategory;
+        return 0;
     }
 
-    public void setProductCategory(int productCategory) {
+    public void setProductCategory(CategoryProductEnum productCategory) {
         this.productCategory = productCategory;
     }
 
