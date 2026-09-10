@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="refactor: change ProductCategory for type ProductCategoryEnum">
-      <change beforePath="$PROJECT_DIR$/.idea/inventory-system-JDBC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inventory-system-JDBC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-system-JDBC/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-system-JDBC/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="chore: config dependencies" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +68,7 @@
     <MESSAGE value="refactor: change “runtime” to “exceptionruntime”" />
     <MESSAGE value="refactor: removes throws from methods" />
     <MESSAGE value="refactor: change ProductCategory for type ProductCategoryEnum" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: change ProductCategory for type ProductCategoryEnum" />
+    <MESSAGE value="chore: config dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: config dependencies" />
   </component>
 </project>
