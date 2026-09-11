@@ -41,16 +41,20 @@ public class Product<ProductStatusEnum> {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", productName='" + productName + '\'' +
-                ", productCategory=" + productCategory +
-                ", availableQuantity=" + availableQuantity +
-                ", minimumQuantity=" + minimumQuantity +
-                ", productValue=" + productValue +
-                ", productStatus='" + productStatus + '\'' +
-                '}';
+        return String.format(
+                "Product [\n" +
+                        "  ID:                %d\n" +
+                        "  Nome:              '%s'\n" +
+                        "  Categoria:         %s\n" +
+                        "  Qtd. Disponível:   %d\n" +
+                        "  Qtd. Mínima:       %d\n" +
+                        "  Valor:             R$ %.2f\n" +
+                        "  Status:            '%s'\n" +
+                        "]",
+                id, productName, productCategory, availableQuantity, minimumQuantity, productValue, productStatus
+        );
     }
+
 
     public int getId() {
         return id;

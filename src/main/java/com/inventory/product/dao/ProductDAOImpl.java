@@ -62,7 +62,7 @@ public class ProductDAOImpl implements ProductDAO{
             pt.setInt(4, product.getMinimumQuantity());
             pt.setFloat(5, product.getProductValue());
             pt.setString(6, product.getProductStatus().toString());
-            pt.setInt(7, product.getId());
+            pt.setInt(7, id);
 
             int lines = pt.executeUpdate();
             if (lines == 0) {
@@ -165,5 +165,10 @@ public class ProductDAOImpl implements ProductDAO{
         }
 
         return general;
+    }
+
+    @Override
+    public void findCode(int id) {
+
     }
 }

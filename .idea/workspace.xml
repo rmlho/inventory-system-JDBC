@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="chore: rename package">
+    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="feat: add method registerProduct for main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/ProductStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/ProductStatusEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,13 @@
     <MESSAGE value="feat: add enum for status product" />
     <MESSAGE value="chore: adds the PostgreSQL driver for the connection" />
     <MESSAGE value="chore: rename package" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: rename package" />
+    <MESSAGE value="feat: adds the connection to the database" />
+    <MESSAGE value="feat: Add the DAO interface" />
+    <MESSAGE value="feat: Add the DAO implements" />
+    <MESSAGE value="refactor: structural changes to the code" />
+    <MESSAGE value="chore: add dependencies" />
+    <MESSAGE value="feat: add method registerProduct for main" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add method registerProduct for main" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

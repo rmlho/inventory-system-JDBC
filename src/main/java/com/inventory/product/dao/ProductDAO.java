@@ -14,4 +14,5 @@ public interface ProductDAO {
     List<Product> higherValue();
     List<Product> pricePerProduct();
     List<Product> searchCategory(CategoryProductEnum category);
+    void findCode(int id);
 }
