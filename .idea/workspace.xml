@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="chore: adds the PostgreSQL driver for the connection">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_7_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/ProductDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/db/DB.java" afterDir="false" />
+    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="chore: rename package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ProductStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ProductStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/db/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/ProductStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/model/ProductStatusEnum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,14 +20,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rmlho&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rmlho/inventory-system-JDBC.git&quot;,
+    &quot;accountId&quot;: &quot;2ef485c4-1ccd-4428-b066-3661b2a1cebd&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 2
@@ -39,6 +52,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DB.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -51,6 +65,34 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.inventory.product.dao" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.inventory.product.dao" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.inventory.product.db.DB" />
+      <module name="inventory-system-JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inventory.product.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DB" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,6 +123,17 @@
     <MESSAGE value="refactor: removes the abstract product class" />
     <MESSAGE value="feat: add enum for status product" />
     <MESSAGE value="chore: adds the PostgreSQL driver for the connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: adds the PostgreSQL driver for the connection" />
+    <MESSAGE value="chore: rename package" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: rename package" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
