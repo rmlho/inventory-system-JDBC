@@ -3,7 +3,6 @@ package com.inventory.product.dao;
 import com.inventory.product.db.DB;
 import com.inventory.product.model.CategoryProductEnum;
 import com.inventory.product.model.Product;
-import org.postgresql.replication.fluent.physical.PhysicalReplicationOptions;
 
 import java.sql.Connection;
 import java.sql.SQLException;

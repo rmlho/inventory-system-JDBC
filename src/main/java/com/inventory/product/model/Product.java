@@ -19,6 +19,15 @@ public class Product<ProductStatusEnum> {
         this.productStatus = productStatus;
     }
 
+    public Product(String productName, CategoryProductEnum productCategory, int availableQuantity, int minimumQuantity, float productValue, ProductStatusEnum productStatus) {
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.availableQuantity = availableQuantity;
+        this.minimumQuantity = minimumQuantity;
+        this.productValue = productValue;
+        this.productStatus = productStatus;
+    }
+
     public Product(int id, String productName, float productValue) {
         this.id = id;
         this.productName = productName;
