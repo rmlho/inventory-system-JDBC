@@ -8,6 +8,7 @@ import com.inventory.product.model.Product;
 import com.inventory.product.model.ProductStatusEnum;
 import com.inventory.product.validation.ProductValidator;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -63,6 +64,26 @@ public class Main {
             Product product = new Product(name, cat, availableQuantity, miniQuantity, value, status);
             ProductDAO dao = new ProductDAOImpl();
             dao.insert(product);
+
+    }
+
+    static void tableList() {
+        System.out.println("=-=-=-=-=-=-=-=-=-=- PRODUCTS TABLE =-=-=-=-=-=-=-=-=-=-");
+        ProductDAO dao = new ProductDAOImpl();
+        List<Product> products = dao.generalReport();
+
+        for (Product p : products) {
+            p.toString();
+        }
+    }
+
+    static void updateTable() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=-=-=-=-=-=-=-=-=-=- UPDATE =-=-=-=-=-=-=-=-=-=-");
+        System.out.println("ID Product: ");
+        int id = sc.nextInt();
+
+
 
     }
 }
