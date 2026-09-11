@@ -9,6 +9,27 @@ public class Product<ProductStatusEnum> {
     protected float productValue;
     protected ProductStatusEnum productStatus;
 
+    public Product(int id, String productName, CategoryProductEnum productCategory, int availableQuantity, int minimumQuantity, float productValue, ProductStatusEnum productStatus) {
+        this.id = id;
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.availableQuantity = availableQuantity;
+        this.minimumQuantity = minimumQuantity;
+        this.productValue = productValue;
+        this.productStatus = productStatus;
+    }
+
+    public Product(int id, String productName, float productValue) {
+        this.id = id;
+        this.productName = productName;
+        this.productValue = productValue;
+    }
+
+    public Product(String productName, float productValue) {
+        this.productName = productName;
+        this.productValue = productValue;
+    }
+
     @Override
     public String toString() {
         return "Product{" +

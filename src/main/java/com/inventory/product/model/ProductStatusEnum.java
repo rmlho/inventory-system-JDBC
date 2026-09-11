@@ -7,6 +7,11 @@ public enum ProductStatusEnum {
 
     private String status;
 
+    @Override
+    public String toString() {
+        return status;
+    }
+
     ProductStatusEnum(String status) {
         this.status = status;
     }
