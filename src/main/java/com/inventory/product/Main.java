@@ -22,6 +22,7 @@ public class Main {
     static void registerProduct() {
             Scanner sc = new Scanner(System.in);
 
+        System.out.println("=-=-=-=-=-=-=-=-=-=- REGISTER =-=-=-=-=-=-=-=-=-=-");
             System.out.println("=-=-=-=-=- Categories =-=-=-=-=-");
             for (CategoryProductEnum cat : CategoryProductEnum.values()) {
                 System.out.printf("  [%d] - %-35s \n", cat.getId(), cat.getName());
@@ -82,8 +83,73 @@ public class Main {
         System.out.println("=-=-=-=-=-=-=-=-=-=- UPDATE =-=-=-=-=-=-=-=-=-=-");
         System.out.println("ID Product: ");
         int id = sc.nextInt();
+        sc.close();
 
+        ProductDAO dao = new ProductDAOImpl();
+        dao.update(id, dao.findCode(id));
+    }
 
+    static void removeTable() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=-=-=-=-=-=-=-=-=-=- REMOVE =-=-=-=-=-=-=-=-=-=-");
+        System.out.println("ID product: ");
+        int id = sc.nextInt();
+        sc.close();
 
+        ProductDAO dao = new ProductDAOImpl();
+        dao.remove(id);
+    }
+
+    static void listSeachName() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=-=-=-=-=-=-=-=-=-=- PRODUCTS NAME TABLE =-=-=-=-=-=-=-=-=-=-");
+        System.out.println("Product Name: ");
+        String name = sc.nextLine();
+        sc.close();
+
+        ProductDAO dao = new ProductDAOImpl();
+        List<Product> products = dao.searchName(name);
+
+        for (Product p : products) {
+            p.toString();
+        }
+    }
+
+    static void listhigherValue() {
+        System.out.println("=-=-=-=-=-=-=-=-=-=- PRODUCTS HIGHER VALUE TABLE =-=-=-=-=-=-=-=-=-=-");
+
+        ProductDAO dao = new ProductDAOImpl();
+        List<Product> products = dao.higherValue();
+
+        for (Product p : products) {
+            p.toString();
+        }
+    }
+
+    static void listpricePerProduct() {
+        System.out.println("=-=-=-=-=-=-=-=-=-=- PRICE PER PRODUCT TABLE =-=-=-=-=-=-=-=-=-=-");
+
+        ProductDAO dao = new ProductDAOImpl();
+        List<Product> products = dao.pricePerProduct();
+
+        for (Product p : products) {
+            p.toString();
+        }
+    }
+
+    static void listsearchCategory() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("=-=-=-=-=-=-=-=-=-=- PRODUCT CATEGORY TABLE =-=-=-=-=-=-=-=-=-=-");
+        System.out.println("Code Category Product: ");
+        int cat = sc.nextInt();
+
+        sc.close();
+
+        ProductDAO dao = new ProductDAOImpl();
+        List<Product> products = dao.searchCategory(CategoryProductEnum.fromId(cat));
+
+        for (Product p : products) {
+            p.toString();
+        }
     }
 }

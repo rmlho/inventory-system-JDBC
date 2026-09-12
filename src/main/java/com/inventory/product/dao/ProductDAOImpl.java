@@ -168,6 +168,7 @@ public class ProductDAOImpl implements ProductDAO{
         return general;
     }
 
+    @Override
     public Product findCode(int id) {
         String sql = "SELECT * FROM products WHERE id = ?";
 

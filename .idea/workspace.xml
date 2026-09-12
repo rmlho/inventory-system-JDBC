@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="fix: Fixed a bug in the status enum">
+    <list default="true" id="c269d581-bef2-4dfc-8712-f6cb3ed4057b" name="Changes" comment="chore: add dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/inventory/product/dao/ProductDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,12 +125,13 @@
     <MESSAGE value="feat: Add the DAO interface" />
     <MESSAGE value="feat: Add the DAO implements" />
     <MESSAGE value="refactor: structural changes to the code" />
-    <MESSAGE value="chore: add dependencies" />
     <MESSAGE value="feat: add method registerProduct for main" />
     <MESSAGE value="feat: add method tableList for main" />
     <MESSAGE value="refactor: method findCode in ProductDAO" />
     <MESSAGE value="fix: Fixed a bug in the status enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: Fixed a bug in the status enum" />
+    <MESSAGE value="feat: add method findCode for ProductDAOImpl" />
+    <MESSAGE value="chore: add dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
