@@ -3,6 +3,7 @@ package com.inventory.product.dao;
 import com.inventory.product.db.DB;
 import com.inventory.product.model.CategoryProductEnum;
 import com.inventory.product.model.Product;
+import com.inventory.product.model.ProductStatusEnum;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,19 +15,18 @@ public class ProductDAOImpl implements ProductDAO{
     public void insert(Product product) {
         String sql = "INSERT INTO products(product_Name, product_Category, available_Quantity, minimum_Quantity, product_Value, product_Status) VALUES (?,?,?,?,?,?)";
 
-        try (Connection con = DB.getConnection()){
-            var pt = con.prepareStatement(sql);
+        try (Connection con = DB.getConnection();
+             var pt = con.prepareStatement(sql)){
 
             pt.setString(1, product.getProductName());
-            pt.setInt(2, product.getProductCategory());
+            pt.setInt(2, product.getProductCategory().getId());
             pt.setInt(3, product.getAvailableQuantity());
             pt.setInt(4, product.getMinimumQuantity());
             pt.setFloat(5, product.getProductValue());
             pt.setString(6, product.getProductStatus().toString());
 
             pt.executeUpdate();
-            pt.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -36,14 +36,14 @@ public class ProductDAOImpl implements ProductDAO{
         String sql = "SELECT * FROM products";
         List<Product> general = new ArrayList<>();
 
-        try (Connection con = DB.getConnection()){
+        try (Connection con = DB.getConnection();
             var pt = con.prepareStatement(sql);
-            var eq = pt.executeQuery();
+            var eq = pt.executeQuery()){
 
             while (eq.next()) {
-                general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), eq.getString("product_Status")));
+                general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), ProductStatusEnum.valueOf(eq.getString("product_Status"))));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return general;
@@ -53,11 +53,11 @@ public class ProductDAOImpl implements ProductDAO{
     public void update(int id, Product product) {
         String sql = "UPDATE products SET product_Name = ?, product_Category = ?, available_Quantity = ?, minimum_Quantity = ?, product_Value = ?, product_Status = ? WHERE id = ?";
 
-        try (Connection con = DB.getConnection()){
-            var pt = con.prepareStatement(sql);
+        try (Connection con = DB.getConnection();
+             var pt = con.prepareStatement(sql)){
 
             pt.setString(1, product.getProductName());
-            pt.setInt(2, product.getProductCategory());
+            pt.setInt(2, product.getProductCategory().getId());
             pt.setInt(3, product.getAvailableQuantity());
             pt.setInt(4, product.getMinimumQuantity());
             pt.setFloat(5, product.getProductValue());
@@ -68,8 +68,7 @@ public class ProductDAOImpl implements ProductDAO{
             if (lines == 0) {
                 throw new SQLException("No updates performed");
             }
-            pt.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -78,31 +77,32 @@ public class ProductDAOImpl implements ProductDAO{
     public void remove(int id) {
         String sql = "DELETE FROM products WHERE id = ?";
 
-        try (Connection con = DB.getConnection()){
-            var pt = con.prepareStatement(sql);
+        try (Connection con = DB.getConnection();
+             var pt = con.prepareStatement(sql)){
+
             pt.setInt(1, id);
             pt.executeUpdate();
-            pt.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
     public List<Product> searchName(String name) {
-        String sql = "SELECT * FROM products WHERE product_Name = ?";
+        String sql = "SELECT * FROM products WHERE product_Name = LIKE ?";
         List<Product> general = new ArrayList<>();
 
-        try (Connection con = DB.getConnection()){
-            var pt = con.prepareStatement(sql);
+        try (Connection con = DB.getConnection();
+             var pt = con.prepareStatement(sql)){
+
             pt.setString(1, "%" + name + "%");
 
             try (var eq = pt.executeQuery()){
                 while (eq.next()) {
-                    general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), eq.getString("product_Status")));
+                    general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), ProductStatusEnum.valueOf(eq.getString("product_Status"))));
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return general;
@@ -120,7 +120,7 @@ public class ProductDAOImpl implements ProductDAO{
             while (eq.next()) {
                 general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), eq.getFloat("product_Value")));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
@@ -139,7 +139,7 @@ public class ProductDAOImpl implements ProductDAO{
             while (eq.next()){
                 general.add(new Product(eq.getString("product_Name"), eq.getFloat("total")));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return general;
@@ -157,10 +157,10 @@ public class ProductDAOImpl implements ProductDAO{
 
             try (var eq = pt.executeQuery()){
                 while (eq.next()) {
-                    general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), eq.getString("product_Status")));
+                    general.add(new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), ProductStatusEnum.valueOf(eq.getString("product_Status"))));
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 

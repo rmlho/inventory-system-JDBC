@@ -57,7 +57,7 @@ public class Main {
             }
 
             System.out.println("Status: ");
-            String status = sc.nextLine().toUpperCase();
+            ProductStatusEnum status = ProductStatusEnum.valueOf(sc.nextLine().toUpperCase());
 
             sc.close();
 

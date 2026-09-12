@@ -1,6 +1,6 @@
 package com.inventory.product.model;
 
-public class Product<ProductStatusEnum> {
+public class Product {
     protected int id;
     protected String productName;
     protected CategoryProductEnum productCategory;
@@ -42,15 +42,17 @@ public class Product<ProductStatusEnum> {
     @Override
     public String toString() {
         return String.format(
-                "Product [\n" +
-                        "  ID:                %d\n" +
-                        "  Nome:              '%s'\n" +
-                        "  Categoria:         %s\n" +
-                        "  Qtd. Disponível:   %d\n" +
-                        "  Qtd. Mínima:       %d\n" +
-                        "  Valor:             R$ %.2f\n" +
-                        "  Status:            '%s'\n" +
-                        "]",
+                        "+--------------------+------------------------------+\n" +
+                        "| Atributo           | Valor                        |\n" +
+                        "+--------------------+------------------------------+\n" +
+                        "| ID                 | %-28d |\n" +
+                        "| Nome               | '%-26s' |\n" +
+                        "| Categoria          | %-28s |\n" +
+                        "| Qtd. Disponível    | %-28d |\n" +
+                        "| Qtd. Mínima        | %-28d |\n" +
+                        "| Valor              | R$ %-25.2f |\n" +
+                        "| Status             | '%-26s' |\n" +
+                        "+--------------------+------------------------------+",
                 id, productName, productCategory, availableQuantity, minimumQuantity, productValue, productStatus
         );
     }
@@ -72,8 +74,8 @@ public class Product<ProductStatusEnum> {
         this.productName = productName;
     }
 
-    public int getProductCategory() {
-        return 0;
+    public CategoryProductEnum getProductCategory() {
+        return productCategory;
     }
 
     public void setProductCategory(CategoryProductEnum productCategory) {
