@@ -1,6 +1,7 @@
 package com.inventory.product.dao;
 
 import com.inventory.product.db.DB;
+import com.inventory.product.exception.ProductInvalidException;
 import com.inventory.product.model.CategoryProductEnum;
 import com.inventory.product.model.Product;
 import com.inventory.product.model.ProductStatusEnum;
@@ -167,8 +168,24 @@ public class ProductDAOImpl implements ProductDAO{
         return general;
     }
 
-    @Override
-    public void findCode(int id) {
+    public Product findCode(int id) {
+        String sql = "SELECT * FROM products WHERE id = ?";
 
+        try (Connection con = DB.getConnection();
+             var pt = con.prepareStatement(sql)) {
+
+            pt.setInt(1, id);
+
+            try (var eq = pt.executeQuery()) {
+                if (eq.next()) {
+                    Product pr = new Product(eq.getInt("id"), eq.getString("product_Name"), CategoryProductEnum.fromId(eq.getInt("product_Category")), eq.getInt("available_Quantity"), eq.getInt("minimum_Quantity"), eq.getFloat("product_Value"), ProductStatusEnum.valueOf(eq.getString("product_Status")));
+                    return pr;
+                } else {
+                   throw new ProductInvalidException("No product found with id: " + id);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
