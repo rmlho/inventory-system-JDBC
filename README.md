@@ -1,7 +1,6 @@
 # Inventory System JDBC
 A Java-based inventory management system that uses JDBC to connect to a PostgreSQL database using JDBC. This project allows you to manage product data with basic reporting features.
 ---
----
 ## Features
 - **Product Management:** Add, update, and manage product records.
 - **Database Integration:** Connects to a PostgreSQL database using the JDBC driver.
@@ -21,7 +20,6 @@ inventory-system-JDBC/
 ├── pom.xml  
 └── README.md
 
----
 ## Getting Started
 ### Prerequisites
 - Java Development Kit (JDK) 8 or higher
