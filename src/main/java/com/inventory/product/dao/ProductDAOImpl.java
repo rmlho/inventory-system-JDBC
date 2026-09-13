@@ -90,7 +90,7 @@ public class ProductDAOImpl implements ProductDAO{
 
     @Override
     public List<Product> searchName(String name) {
-        String sql = "SELECT * FROM products WHERE product_Name = LIKE ?";
+        String sql = "SELECT * FROM products WHERE product_Name ILIKE ?";
         List<Product> general = new ArrayList<>();
 
         try (Connection con = DB.getConnection();
@@ -130,7 +130,7 @@ public class ProductDAOImpl implements ProductDAO{
 
     @Override
     public List<Product> pricePerProduct() {
-        String sql = "SELECT product_Name, SUM(product_Value) AS total FROM products GROUP BY product_Name";
+        String sql = "SELECT product_Name, SUM(product_Value * available_Quantity) AS total FROM products GROUP BY product_Name";
         List<Product> general = new ArrayList<>();
 
         try (Connection con = DB.getConnection();

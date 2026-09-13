@@ -48,7 +48,7 @@ public final class ProductValidator {
     }
 
     public static void validatorString(@NotNull String text) {
-        if (!text.matches("^[A-Za-zÀ-ÿ ]+$")) {
+        if (!text.matches("^[a-zA-Z0-9À-ÿ\\s]+$")) {
             throw new ProductInvalidException("Not is text.");
         }
     }

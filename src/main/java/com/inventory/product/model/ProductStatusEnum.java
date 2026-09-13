@@ -1,9 +1,9 @@
 package com.inventory.product.model;
 
 public enum ProductStatusEnum {
-    ACTIVE("ACTIVE"),
-    UNAVAILABLE("UNAVAILABLE"),
-    DISCONTINUED("DISCONTINUED");
+    ACTIVE("Active"),
+    UNAVAILABLE("Unavailable"),
+    DISCONTINUED("Discontinued");
 
     private String status;
 

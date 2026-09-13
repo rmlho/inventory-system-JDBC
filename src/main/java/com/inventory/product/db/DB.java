@@ -11,7 +11,7 @@ public class DB {
 
     public static Connection getConnection() {
         try {
-            return DriverManager.getConnection(username, username, username);
+            return DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
             throw new RuntimeException("ERRO: " + e.getMessage(), e);
         }

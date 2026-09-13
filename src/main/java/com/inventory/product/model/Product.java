@@ -41,19 +41,10 @@ public class Product {
 
     @Override
     public String toString() {
+        // Cada %-Xs garante um tamanho fixo para a coluna
         return String.format(
-                        "+--------------------+------------------------------+\n" +
-                        "| Atributo           | Valor                        |\n" +
-                        "+--------------------+------------------------------+\n" +
-                        "| ID                 | %-28d |\n" +
-                        "| Nome               | '%-26s' |\n" +
-                        "| Categoria          | %-28s |\n" +
-                        "| Qtd. Disponível    | %-28d |\n" +
-                        "| Qtd. Mínima        | %-28d |\n" +
-                        "| Valor              | R$ %-25.2f |\n" +
-                        "| Status             | '%-26s' |\n" +
-                        "+--------------------+------------------------------+",
-                id, productName, productCategory, availableQuantity, minimumQuantity, productValue, productStatus
+                "| %-4d | %-20s | %-20s | %-10d | %-10d | R$ %-8.2f | %-12s |",
+                id, productName, productCategory.getName(), availableQuantity, minimumQuantity, productValue, productStatus.getStatus()
         );
     }
 
