@@ -2,7 +2,7 @@
 A Java-based inventory management system that uses JDBC to connect to a PostgreSQL database using JDBC. This project allows you to manage product data with basic reporting features.
 ---
 
-![Demo](assets/demo.gif)
+![Demo](assets/merged(1).gif)
 
 ## Features
 - **Product Management:** Add, update, and manage product records.
